@@ -1,0 +1,34 @@
+﻿<div class="row margin-top-5" ng-model="product">
+
+    <div class="col-md-10 col-md-offset-1">
+        <a href="#/products"><h2>Products</h2></a>
+        <form class="form-horizontal" ng-show="authentication.isAuth">
+            <div class="form-group" tooltip="Enter the name of the product">
+                <input type="text" class="form-control" placeholder="Product Name" ng-model="product.Title" />
+            </div>
+            <div class="form-group" tooltip="Enter the price of the product">
+                <input type="text" class="form-control" placeholder="Product Price" ng-model="product.Price" />
+            </div>
+            <div class="form-group">
+                <div class="btn btn-primary icon-camera" ng-click="save()">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12">
+        <div class="alert alert-dismissable alert-danger" ng-show="autoSaved.Error">
+            <button type="button" class="close" ng-click="autoSaved.Error = false">×</button>
+            <strong>Oh snap!</strong> Something happened during auto save.
+        </div>
+        <div class="alert alert-dismissable alert-info" ng-show="autoSaved.Busy">
+            <button type="button" class="close" ng-click="autoSaved.Busy = false">×</button>
+            <strong>Auto Saving</strong> Saving changes to the cloud...
+        </div>
+        <div class="alert alert-dismissable alert-success" ng-show="autoSaved.Success">
+            <button type="button" class="close" ng-click="autoSaved.Success = false">×</button>
+            <strong>Saved</strong> Your changes are saved.
+        </div>
+    </div>
+</div>
